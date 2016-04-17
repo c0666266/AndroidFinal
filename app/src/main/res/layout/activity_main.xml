@@ -19,22 +19,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Total Money"
-            android:id="@+id/TotalMoneyButton"
+            android:id="@+id/totalMoneyButton"
             android:width="500dp" />
     </TableRow>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/AddMoney"
+        android:id="@+id/addMoney"
         android:focusableInTouchMode="true">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Money"
-            android:id="@+id/AddMoneyButton"
-            android:onClick="onButtonClick" />
+            android:id="@+id/addMoneyButton"
+            />
     </TableRow>
 
     <TableRow
@@ -46,8 +46,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="View My Share"
-            android:id="@+id/ViewMyShareButton"
-            android:onClick="onButtonClick"/>
+            android:id="@+id/viewMyShareButton"
+           />
     </TableRow>
 
     <TableRow
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Money Borrowed"
-            android:id="@+id/MoneyBorrowedButton" />
+            android:id="@+id/moneyBorrowedButton" />
     </TableRow>
 
 </TableLayout>

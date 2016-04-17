@@ -6,24 +6,39 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 
 
 /**
  * Created by jatin on 03-04-2016.
  */
-public class AddMoney extends Activity {
+public class AddMoney extends Activity implements View.OnClickListener {
+
+    //define variables to the widget
+    private TextView descriptionTextView;
+    private EditText descriptionEditText;
+    private EditText enterMoneyEditText;
+    private Button addMoneyButton2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_money);
+
+        descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
+        enterMoneyEditText = (EditText) findViewById(R.id.enterMoneyEditText);
+        addMoneyButton2 = (Button) findViewById(R.id.addMoneyButton2);
+
+        addMoneyButton2.setOnClickListener(this);
     }
 
-    public void onButtonClick(View v){
 
-        if(v.getId() == R.id.AddMoneyButton2)
-        {
-            Intent i =new Intent(AddMoney.this,ViewMyShare.class);
-            startActivity(i);
-        }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }

@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:id="@+id/DescriptionTextView" />
+            android:id="@+id/descriptionTextView" />
     </TableRow>
 
     <TableRow
@@ -23,7 +23,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/DescriptionEditText"
+            android:id="@+id/descriptionEditText"
             android:layout_column="0"
             android:text="Enter description" />
     </TableRow>
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter Money"
-            android:id="@+id/EnterMoneyTextView" />
+            android:id="@+id/enterMoneyTextView" />
 
     </TableRow>
 
@@ -49,7 +49,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/EnterMoneyEditText"
+            android:id="@+id/enterMoneyEditText"
             android:layout_column="0" />
     </TableRow>
 
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Money"
-            android:id="@+id/AddMoneyButton2"
+            android:id="@+id/addMoneyButton2"
             android:layout_column="0"
             android:onClick="onButtonClick" />
     </TableRow>

@@ -23,6 +23,9 @@ public class AddMoney extends Activity implements View.OnClickListener {
     private EditText enterMoneyEditText;
     private Button addMoneyButton2;
 
+    private String billAmountString = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,19 @@ public class AddMoney extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+    //get the bill amount
+        billAmountString = enterMoneyEditText.getText().toString();
+    // convert bill amount to float
+        float billAmount;
+        if (billAmountString.equals("")) {
+            billAmount = 0;
+        }
+        else {
+            billAmount = Float.parseFloat(billAmountString);
+        }
+    // split the total billAmount
+        float splitAmount = 0;
+        splitAmount = billAmount/2;
 
     }
 }

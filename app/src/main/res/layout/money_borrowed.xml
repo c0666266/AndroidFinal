@@ -1,29 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    >
-
-<TableRow
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/row1">
+    android:focusable="false"
+    >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Total Money"
-        android:id="@+id/textView1"
-        android:layout_column="2"
-        android:width="200dp" />
-
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/showAmount"
-        android:layout_column="11"
-        android:width="150dp" />
-</TableRow>
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/images">
 
-</TableLayout>
+    </ImageView>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/white"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:text="Total Money"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/showAmount"
+            android:ems="10"
+            android:typeface="sans"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textView1"
+            android:textAlignment="center"
+           />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

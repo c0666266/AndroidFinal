@@ -1,69 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="false"
     >
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/row1">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"
+        android:background="@drawable/images">
+
+    </ImageView>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+
+        android:id="@+id/relativeLayout">
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Saurabh"
+            android:padding="10dp"
+            android:ems="10"
             android:id="@+id/textView1"
-            android:layout_column="2"
-            android:width="200dp" />
+            android:layout_centerHorizontal="true"
+            android:text="Saurabh"
+            android:textSize="@dimen/abc_text_size_medium_material"/>
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/relativeLayout1"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:layout_toRightOf="@+id/relativeLayout"
+        android:layout_toEndOf="@+id/relativeLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
             android:id="@+id/editText1"
-            android:layout_column="11"
-            android:width="150dp" />
-    </TableRow>
+            android:layout_centerHorizontal="true"
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/row2">
+            android:textSize="@dimen/abc_text_size_medium_material"/>
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+        android:id="@+id/relativeLayout2"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_alignRight="@+id/relativeLayout1"
+        android:layout_alignEnd="@+id/relativeLayout1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Jatinder"
-            android:id="@+id/textView2"
-            android:layout_column="2" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
             android:id="@+id/editText2"
-            android:layout_column="11" />
-    </TableRow>
+            android:layout_centerHorizontal="true"
+
+            android:textSize="@dimen/abc_text_size_medium_material"/>
 
 
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+
+        android:id="@+id/relativeLayout3"
+        android:layout_alignTop="@+id/relativeLayout2"
+        android:layout_alignLeft="@+id/relativeLayout"
+        android:layout_alignStart="@+id/relativeLayout">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Total"
-            android:id="@+id/textView3"
-            android:layout_column="2" />
+            android:padding="10dp"
+            android:ems="10"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:text="Jatinder"
+            android:textSize="@dimen/abc_text_size_medium_material"/>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+        android:id="@+id/relativeLayout4"
+        android:layout_below="@+id/relativeLayout2"
+        android:layout_alignLeft="@+id/relativeLayout2"
+        android:layout_alignStart="@+id/relativeLayout2">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
             android:id="@+id/editText3"
-            android:layout_column="11" />
-    </TableRow>
-</TableLayout>
+            android:layout_centerHorizontal="true"
+
+            android:textSize="@dimen/abc_text_size_medium_material"/>
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:paddingRight="40dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:background="@drawable/white"
+
+        android:id="@+id/relativeLayout5"
+        android:layout_alignTop="@+id/relativeLayout4"
+        android:layout_toLeftOf="@+id/relativeLayout1"
+        android:layout_toStartOf="@+id/relativeLayout1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:ems="10"
+            android:id="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:text="Total"
+
+            android:textSize="@dimen/abc_text_size_large_material"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+
+</RelativeLayout>

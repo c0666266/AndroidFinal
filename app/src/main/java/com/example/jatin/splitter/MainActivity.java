@@ -12,7 +12,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     //define variables to the widget
     private Button addMoneyButton;
-    private Button totalMoneyButton;
+
     private Button viewMyShareButton;
     private Button moneyBorrowedButton;
     @Override
@@ -22,12 +22,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //get references to the widget
         addMoneyButton = (Button) findViewById(R.id.addMoneyButton);
-        totalMoneyButton =(Button) findViewById(R.id.totalMoneyButton);
+
         viewMyShareButton = (Button) findViewById(R.id.viewMyShareButton);
         moneyBorrowedButton = (Button) findViewById(R.id.moneyBorrowedButton);
 
         addMoneyButton.setOnClickListener(this);
-        totalMoneyButton.setOnClickListener(this);
+
         viewMyShareButton.setOnClickListener(this);
         moneyBorrowedButton.setOnClickListener(this);
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(i);
         }
         else if (v.getId() == R.id.viewMyShareButton){
-            Intent i = new Intent(MainActivity.this,ViewMyShare.class);
+            Intent i = new Intent(MainActivity.this,ViewTotal.class);
             startActivity(i);
         }
         else if(v.getId() == R.id.moneyBorrowedButton){

@@ -93,7 +93,21 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cur = db.rawQuery(query, null);
-        double val;
+        if(cur.moveToFirst()){
+            return cur.getDouble(0);
+        }
+        else{
+            return 0.0;
+        }
+
+    }
+    public double viewTotal2(){
+        String query1 = "select sum(toGive) from "+ person1;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cur = db.rawQuery(query1, null);
+
 
         if(cur.moveToFirst()){
             return cur.getDouble(0);
@@ -103,6 +117,8 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         }
 
     }
+
+
 
 
 }

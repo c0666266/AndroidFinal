@@ -22,9 +22,9 @@ public class AddMoney extends Activity implements View.OnClickListener {
     private EditText descriptionEditText;
     private EditText enterMoneyEditText;
     private Button addMoneyButton2;
+    private TextView resultTextView;
 
     private String billAmountString = "";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class AddMoney extends Activity implements View.OnClickListener {
         descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
         enterMoneyEditText = (EditText) findViewById(R.id.enterMoneyEditText);
         addMoneyButton2 = (Button) findViewById(R.id.addMoneyButton2);
+        resultTextView = (TextView) findViewById(R.id.resultTextView);
 
         addMoneyButton2.setOnClickListener(this);
     }
@@ -45,7 +46,7 @@ public class AddMoney extends Activity implements View.OnClickListener {
     //get the bill amount
         billAmountString = enterMoneyEditText.getText().toString();
     // convert bill amount to float
-        float billAmount;
+        double billAmount;
         if (billAmountString.equals("")) {
             billAmount = 0;
         }
@@ -53,8 +54,22 @@ public class AddMoney extends Activity implements View.OnClickListener {
             billAmount = Float.parseFloat(billAmountString);
         }
     // split the total billAmount
-        float splitAmount = 0;
+        double splitAmount = 0;
         splitAmount = billAmount/2;
+        Money money = new Money(descriptionEditText.getText().toString(), 0, splitAmount);
+
+        AddMoneyDB addMoneyHandler = new AddMoneyDB(this);
+        int flag = addMoneyHandler.addData(money);
+
+        Money m = new Money(descriptionEditText.getText().toString(), splitAmount, 0 );
+
+        AddMoneyDB2 add = new AddMoneyDB2(this);
+        int flag1 = add.addData(m);
+
+
+        descriptionEditText.setText("");
+        enterMoneyEditText.setText("");
+        resultTextView.setText("flag " + flag + "flag1 " + flag1);
 
     }
 }

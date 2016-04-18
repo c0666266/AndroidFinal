@@ -46,7 +46,7 @@ public class AddMoneyDB2 extends SQLiteOpenHelper{
             onCreate(db);
         }
 
-        public Integer addData(Money m){
+        public Integer addData2(Money m){
             ContentValues values = new ContentValues();
             values.put( col2, m.getDescription());
             values.put( col3, m.getToGive());

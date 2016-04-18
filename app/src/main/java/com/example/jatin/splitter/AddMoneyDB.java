@@ -2,6 +2,7 @@ package com.example.jatin.splitter;
 
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -39,12 +40,16 @@ public class AddMoneyDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + person1 + "(" + col1 + " INTEGER PRIMARY KEY," + col2 + " TEXT," + col3 + " TEXT,"
                 + col4 + " TEXT," + col5 + " TEXT)");
+
+        db.execSQL("create table " + person2 + "(" + col1 + " INTEGER PRIMARY KEY," + col2 + " TEXT," + col3 + " TEXT,"
+                + col4 + " TEXT," + col5 + " TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,
                           int newVersion) {
         db.execSQL("Drop Table If Exist " + person1);
+        db.execSQL("Drop Table If Exist " + person2);
         onCreate(db);
     }
 
@@ -53,11 +58,27 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         values.put( col2, m.getDescription());
         values.put( col3, m.getToGive());
         values.put( col4, m.getDateAdded());
-        values.put( col5, m.getToTake());
+        values.put(col5, m.getToTake());
 
         myDB = this.getWritableDatabase();
 
         long isInserted = myDB.insert(person1, null, values);
+        if (isInserted == -1) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    public Integer addData2(Money m){
+        ContentValues values = new ContentValues();
+        values.put( col2, m.getDescription());
+        values.put( col3, m.getToGive());
+        values.put( col4, new Date().toString());
+        values.put( col5, m.getToTake());
+
+        myDB = this.getWritableDatabase();
+
+        long isInserted = myDB.insert(person2, null, values);
         if (isInserted == -1) {
             return 0;
         } else {

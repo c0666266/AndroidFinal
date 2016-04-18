@@ -33,20 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    public void onButtonClick(View v){
-        if(v.getId()== R.id.addMoneyButton)
-        {
-            Intent i = new Intent(MainActivity.this,AddMoney.class);
-            startActivity(i);
-        }
-
-        else if(v.getId()== R.id.viewMyShareButton)
-        {
-            Intent i = new Intent(MainActivity.this,ViewMyShare.class);
-            startActivity(i);
-        }
-
-    }
 
     @Override
     public void onClick(View v) {

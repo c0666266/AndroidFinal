@@ -62,9 +62,7 @@ public class AddMoney extends Activity implements View.OnClickListener {
         int flag = addMoneyHandler.addData(money);
 
         Money m = new Money(descriptionEditText.getText().toString(), splitAmount, 0 );
-
-        AddMoneyDB2 add = new AddMoneyDB2(this);
-        int flag1 = add.addData(m);
+        int flag1 = addMoneyHandler.addData(m);
 
 
         descriptionEditText.setText("");

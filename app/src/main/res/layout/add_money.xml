@@ -24,8 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/descriptionEditText"
-            android:layout_column="0"
-            android:text="Enter description" />
+            android:layout_column="0" />
     </TableRow>
 
     <TableRow
@@ -72,11 +71,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/resultTextView"
-            android:layout_column="0" />
     </TableRow>
 </TableLayout>

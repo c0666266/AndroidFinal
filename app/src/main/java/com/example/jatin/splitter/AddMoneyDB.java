@@ -6,6 +6,7 @@ import java.util.Date;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
@@ -57,7 +58,7 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( col2, m.getDescription());
         values.put( col3, m.getToGive());
-        values.put( col4, m.getDateAdded());
+        values.put( col4, new Date().getTime());
         values.put(col5, m.getToTake());
 
         myDB = this.getWritableDatabase();
@@ -73,7 +74,7 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put( col2, m.getDescription());
         values.put( col3, m.getToGive());
-        values.put( col4, new Date().toString());
+        values.put( col4, new Date().getTime());
         values.put( col5, m.getToTake());
 
         myDB = this.getWritableDatabase();
@@ -84,6 +85,23 @@ public class AddMoneyDB extends SQLiteOpenHelper {
         } else {
             return 1;
         }
+    }
+
+    public double viewTotal(){
+        String query = "select sum(toTake) from "+ person1;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cur = db.rawQuery(query, null);
+        double val;
+
+        if(cur.moveToFirst()){
+            return cur.getDouble(0);
+        }
+        else{
+            return 0.0;
+        }
+
     }
 
 

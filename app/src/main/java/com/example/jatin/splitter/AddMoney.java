@@ -22,7 +22,6 @@ public class AddMoney extends Activity implements View.OnClickListener {
     private EditText descriptionEditText;
     private EditText enterMoneyEditText;
     private Button addMoneyButton2;
-    private TextView resultTextView;
 
     private String billAmountString = "";
 
@@ -34,7 +33,6 @@ public class AddMoney extends Activity implements View.OnClickListener {
         descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
         enterMoneyEditText = (EditText) findViewById(R.id.enterMoneyEditText);
         addMoneyButton2 = (Button) findViewById(R.id.addMoneyButton2);
-        resultTextView = (TextView) findViewById(R.id.resultTextView);
 
         addMoneyButton2.setOnClickListener(this);
     }
@@ -62,12 +60,15 @@ public class AddMoney extends Activity implements View.OnClickListener {
         int flag = addMoneyHandler.addData(money);
 
         Money m = new Money(descriptionEditText.getText().toString(), splitAmount, 0 );
-        int flag1 = addMoneyHandler.addData(m);
+        int flag1 = addMoneyHandler.addData2(m);
 
 
         descriptionEditText.setText("");
         enterMoneyEditText.setText("");
-        resultTextView.setText("flag " + flag + "flag1 " + flag1);
 
+        Intent i =new Intent(AddMoney.this,ViewMyShare.class);
+        i.putExtra("amount",splitAmount);
+
+        startActivity(i);
     }
 }
